@@ -48,5 +48,6 @@
       "src/*.*"
     ],
     "linelength": "120"
-  }
+  },
+  "__npminstall_done": false
 }
