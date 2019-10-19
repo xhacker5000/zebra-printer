@@ -11,7 +11,7 @@ PrintControl.init = function(){
 
 PrintControl.print_label = function(data,socket,printer_name){
 
-    console.log('执行打印任务');
+    console.log('执行打印任务',printer_name);
     var image_data = data;
     Printer.printDirect({
         data:image_data,
