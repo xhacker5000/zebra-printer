@@ -41,12 +41,12 @@ netManager.initWebsocket = function(){
         var client_ws = ws;
         ws.on('message', function incoming(data) {
             
-            var webPacket,cmd,data;
+            var webPacket,cmd,data,printer_name;
             try{
                       webPacket  = JSON.parse(data);
                       cmd = webPacket.cmd;
                       data = webPacket.data;
-                                  
+                      printer_name = webPacket.printer_name;                                  
                       console.log('收到消息',cmd);
                       
             }
@@ -59,7 +59,7 @@ netManager.initWebsocket = function(){
             //登录逻辑单独处理在loginConroller;
             var callbackFunc = netManager.callback_pool[cmd];
             if(callbackFunc){
-                callbackFunc(data,client_ws);
+                callbackFunc(data,client_ws,printer_name);
             }
 
 
