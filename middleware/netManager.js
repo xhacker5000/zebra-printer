@@ -41,7 +41,7 @@ netManager.initWebsocket = function(){
         var client_ws = ws;
         ws.on('message', function incoming(data) {
             
-            console.log(data);
+            //console.log(data);
             var webPacket,cmd,data,printer_name;
             try{
                       webPacket  = JSON.parse(data);
