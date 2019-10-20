@@ -41,6 +41,7 @@ netManager.initWebsocket = function(){
         var client_ws = ws;
         ws.on('message', function incoming(data) {
             
+            console.log(data);
             var webPacket,cmd,data,printer_name;
             try{
                       webPacket  = JSON.parse(data);
@@ -95,6 +96,7 @@ netManager.initWebsocket = function(){
 
 netManager.registCallBack = function(cmd, cb){
 
+    console.log('注册命令',cmd)
 	if(netManager.callback_pool[cmd] == undefined){
 		netManager.callback_pool[cmd] = cb;
 	}
